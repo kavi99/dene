@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="container">
+            <div class="column">
+                <div class="columns is-centered">
+
+                </div>
+            </div>
+
+            <div class="column">
+                <div class="columns is-centered">
+                    <a href="/kayit" class="button is-success">Yeni Kayıt Ekle</a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="column">
+                    <div class="columns is-centered">
+
+                    </div>
+                </div>
+
+                <div class="columns is-centered">
+                    <table class="table is-striped is-bordered">
+                        <tr>
+                            <th>No</th>
+                            <th>Ad Soyad</th>
+                            <th>Doğum Tarihi</th>
+                            <th>Hayatta mı ?</th>
+                            <th>Muzik Türü</th>
+                            <th>Albüm Adi</th>
+                            <th>Çıkış Tarihi</th>
+                            <th>Eklenme Tarihi</th>
+                            <th>Update</th>
+                            <th>Delete</th>
+                        </tr>
+                        <% veri.forEach(function(sanatci){ %>
+                        <tr>
+                            <td>
+                                <%= sanatci.Id %>
+                            </td>
+                            <td>
+                                <%= sanatci.SanatciAdi %>
+                            </td>
+                            <td>
+                                <%= sanatci.SanatciDogumTarihi %>
+                            </td>
+                            <td>
+                                <%= sanatci.SanatciYasiyormu %>
+                            </td>
+                            <td>
+                                <%= sanatci.MuzikTur %>
+                            </td>
+                            <td>
+                                <%= sanatci.AlbumAdi %>
+                            </td>
+                            <td>
+                                <%= sanatci.CikisTarihi %>
+                            </td>
+                            <td>
+                                <%= sanatci.EklenmeTarihi %>
+                            </td>
+                            <td>
+                                <a href="/guncelle/<%= sanatci.Id %>" class="button is-warning">Güncelle</a>
+                            </td>
+                            <td>
+                                <a href="/sil/<%= sanatci.Id %>" class="button is-danger">Kaydı Sil</a>
+                            </td>
+                        </tr>
+
+                        <% }); %>
+
+                    </table>
+                </div>
+            </div>
+</body>
+
+</html>

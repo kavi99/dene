@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container">
+            <div class="column">
+                <div class="columns is-centered">
+
+                </div>
+            </div>
+            <div class="columns is-gapless">
+                <div class="column">
+
+                </div>
+                <div class="column">
+                    <h3 class="title is-3">Müzik Türü Ekle</h3>
+                </div>
+                <div class="column">
+                </div>
+                <div class="column">
+
+                </div>
+            </div>
+            <div class="column">
+                <div class="columns level-left">
+
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-half">
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <form action="http://localhost:3000/turEkle" method="POST">
+
+                                    <div class="field is-horizontal">
+
+                                        <div class="field-body">
+                                            <table
+                                                class="table is-striped is-bordered s-narrow is-hoverable is-fullwidth">
+                                                <tr>
+                                                    <th>No</th>
+                                                    <th>Tür Adi</th>
+                                                </tr>
+                                                <% veri.forEach(function(turler){ %>
+                                                <tr>
+                                                    <td>
+                                                        <%= turler.MuzikTurId %>
+                                                    </td>
+                                                    <td>
+                                                        <%= turler.MuzikTur %>
+                                                    </td>
+                                                </tr>
+
+                                                <% }); %>
+
+                                            </table>
+                                        </div>
+                                        <div class="field-body">
+                                            <div class="field">
+                                                <p class="control">
+                                                    <input class="input" name="turAdi" type="text" placeholder="Romantik,Akustik">
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <input type="submit" value="Ekle" class="button is-light">
+                                    </div>
+
+                                    <div class="columns is-gapless">
+                                        <div class="column">
+
+                                        </div>
+                                        <div class="column">
+                                            <a href="/kayit"><input value="Devam Et" class="button is-link"></a>
+
+                                        </div>
+                                        <div class="column">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+</body>
+
+</html>

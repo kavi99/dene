@@ -57,7 +57,7 @@
                                 <%= sanatci.SanatciDogumTarihi %>
                             </td>
                             <td>
-                                <%= sanatci.SanatciYasiyormu %>
+                                <%= sanatci.yasiyormu %>
                             </td>
                             <td>
                                 <%= sanatci.MuzikTur %>
@@ -75,7 +75,8 @@
                                 <a href="/guncelle/<%= sanatci.Id %>" class="button is-warning">Güncelle</a>
                             </td>
                             <td>
-                                <a href="/sil/<%= sanatci.Id %>" class="button is-danger">Kaydı Sil</a>
+                                <a name="/sil/<%= sanatci.Id %>" onclick="onay(this.name)"
+                                    class="button is-danger">Kaydı Sil</a>
                             </td>
                         </tr>
 
@@ -84,6 +85,58 @@
                     </table>
                 </div>
             </div>
+            <div class="modal" id="modalim">
+                <div class="modal-background"></div>
+                <div class="modal-content">
+                    <div class="card" style="margin-top:50px">
+                        <header class="card-header ">
+                            <p class="card-header-title is-centered is-size-4	">
+                                Onay
+                            </p>
+                            <a href="#" class="card-header-icon" aria-label="more options">
+                                <span class="icon">
+                                    <i class="fas fa-angle-down" aria-hidden="true"></i>
+                                </span>
+                            </a>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="title is-5">Geri dönüşü olmamak üzere Silme işlemini onaylıyor musunuz ?</p>
+                                <br>
+                            </div>
+                        </div>
+                        <footer class="card-footer">
+                            <a id="onayButton" class="card-footer-item">Onayla</a>
+
+                            <a id="vazgec" class="card-footer-item">Vazgeç</a>
+                        </footer>
+                    </div>
+                </div>
+                <button class="modal-close is-large" aria-label="close"></button>
+            </div>
 </body>
+<script>
+    var close = document.getElementsByClassName('modal-close')[0];
+    close.onclick = function () {
+        modalim.style.display = 'none';
+    }
+    window.onclick = function (event) {
+        if (event.target.className == 'modal-background') {
+            modalim.style.display = 'none';
+        }
+    }
+    function onay(adres) {
+        modalim.style.display = 'block';
+        var onayButton = document.getElementById('onayButton');
+        onayButton.onclick = function () {
+            location.href = adres;
+        }
+        var vazgec = document.getElementById('vazgec');
+        vazgec.onclick = function () {
+            location.href = '/';
+        }
+    }
+
+</script>
 
 </html>

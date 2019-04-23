@@ -11,7 +11,7 @@ module.exports.userLogin = function (req, res) {
     sql.connect(webconfig, function (err) {
         if (err) console.log(err);
         var request1 = new sql.Request();
-        request1.query("select distinct * from Sanatci s,Album a,MuzikTur m where s.Id = a.SanatciId and m.MuzikTurId = a.MuzikTurId", function (err, verisonucu) {
+        request1.query("select distinct s.Id,s.SanatciAdi,s.SanatciDogumTarihi,m.MuzikTur,a.AlbumAdi,a.CikisTarihi,s.EklenmeTarihi,(case SanatciYasiyormu when 1 then 'Evet' when 0 then 'Hayır' end) as yasiyormu from Sanatci s,Album a,MuzikTur m where s.Id = a.SanatciId and m.MuzikTurId = a.MuzikTurId", function (err, verisonucu) {
             if (err) {
                 console.log(err);
             }
@@ -166,7 +166,6 @@ module.exports.guncelle = function (req, res, next) {
                 sql.close();
                 const id = req.params.id;
                 res.render('guncelle', { tur: verisonucu.recordset, id: id, yaz: yaz.recordset });
-
             });
 
         });

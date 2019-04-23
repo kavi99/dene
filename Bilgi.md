@@ -13,3 +13,6 @@ git remote set-url origin https://github.com/user/repo1.git
 
 git remote -v
 # Verify new remote URL
+
+       res.redirect('/') // yazılan url ye istek atar         
+                

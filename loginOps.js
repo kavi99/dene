@@ -1,9 +1,9 @@
 const sql = require('mssql')
 var webconfig = {
-    user: 'sa',
-    password: 'kavi',
-    server: '192.168.1.101',
-    database: 'MEDIPILIMDB'
+    user: 'adisko88',
+    password: 'kavitr.12',
+    server: 'MEDIPOL.mssql.somee.com',
+    database: 'MEDIPOL'
 };
 
 

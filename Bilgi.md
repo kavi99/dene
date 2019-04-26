@@ -1,7 +1,7 @@
 
 
 
-#Sanatcı tablosundaki SanatciId kolunu, Id olarak degitirilcek.
+HostLink: https://positive-guild-238820.appspot.com/
 
 
 
